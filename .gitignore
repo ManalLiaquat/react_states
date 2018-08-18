@@ -9,6 +9,10 @@
 # production
 /build
 
+# my files
+/src/registerServiceWorker.js
+/public/manifest.json
+
 # misc
 .DS_Store
 .env.local
