@@ -3,6 +3,22 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  constructor(){
+    super()
+    this.state = {
+      date: new Date().toLocaleString(),
+      // counter: 0
+    }
+  }
+
+  counter(){
+    this.setState({
+      date: new Date().toLocaleString()
+      // counter: ++this.counter
+    })
+  }
+  
   render() {
     return (
       <div className="App">
@@ -13,6 +29,8 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <button onClick={()=> this.counter()}>click</button>
+        <p>Date: {this.state.date}</p>
       </div>
     );
   }
