@@ -12,15 +12,23 @@ class App extends Component {
       text: 'I love Pakistan',
       condition: true
     }
+    // this.setSomething = this.setSomething.bind(this)
   }
 
-  counter(){
+  counter(y){
+    console.log(y)
     this.setState({
       date: new Date().toLocaleString(),
       count: ++this.state.count,
       text: this.state.condition ? "Hello World" : 'I love Pakistan',
       condition: !this.state.condition
     })
+  }
+
+  setSomething(x){
+    console.log('setting... Please wait!');
+    // console.log(this)
+    console.log(x)
   }
 
   renderHeader(){
@@ -36,17 +44,18 @@ class App extends Component {
     return(
       <div>
         <p className="App-intro">To get started, edit <code>src/App.js</code> and save to reload.</p>
-        <button onClick={() => this.counter()}>click</button>
+        <button onClick={() => this.counter('***counting***')}>click</button>
         <p>Date: {this.state.date}</p>
         <p>Count: {this.state.count}</p>
         <p>{this.state.text}</p>
+        <button onClick={this.setSomething.bind(this, '***parameter***')}>Set Something</button>
       </div>
     )
   }
 
   renderFooter(){
     return(
-      <h1>This is a footer</h1>
+      <h1 style={{ position: 'absolute', bottom: 0, width:'100%'}}>This is a footer</h1>
     )
   }
   
