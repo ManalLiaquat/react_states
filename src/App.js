@@ -8,14 +8,14 @@ class App extends Component {
     super()
     this.state = {
       date: new Date().toLocaleString(),
-      // counter: 0
+      count: 0
     }
   }
 
   counter(){
     this.setState({
-      date: new Date().toLocaleString()
-      // counter: ++this.counter
+      date: new Date().toLocaleString(),
+      count: ++this.state.count
     })
   }
   
@@ -31,6 +31,7 @@ class App extends Component {
         </p>
         <button onClick={()=> this.counter()}>click</button>
         <p>Date: {this.state.date}</p>
+        <p>Count: {this.state.count}</p>
       </div>
     );
   }
